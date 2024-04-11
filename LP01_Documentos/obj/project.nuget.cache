@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kOse5HrSq3LIUCEFmfSj02yL2ZklCwpMozovj151VtKQlAS0A6QvPfwvx4ms0FRflYqca38/+Q4wwJg2iLEVlg==",
+  "success": true,
+  "projectFilePath": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\LP01_Documentos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.3\\microsoft.dotnet.ilcompiler.8.0.3.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.3\\microsoft.net.illink.tasks.8.0.3.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.3\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
