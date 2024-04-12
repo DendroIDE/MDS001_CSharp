@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="D001_Xml\" />
+    <Compile Remove="D001_Xml\**" />
+    <EmbeddedResource Remove="D001_Xml\**" />
+    <None Remove="D001_Xml\**" />
   </ItemGroup>
 
 </Project>
