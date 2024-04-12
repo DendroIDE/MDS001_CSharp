@@ -1,26 +1,42 @@
-﻿//Crear la instancia de xmldocument
+﻿
+using System.Reflection;
 using System.Xml;
 
-XmlDocument doc = new XmlDocument();
+
+
+//Ruta del documento
+string Ensamblador_Name = Assembly.GetExecutingAssembly().Location;
+string Directorio_Name = Path.GetDirectoryName(Ensamblador_Name);
+string rutaDocumentoXML = Path.Combine(Directorio_Name, "D01_XML/testing.xml");
+
 //Cargar el documento XML
-doc.Load("testing.xml");
-// Recorrer los hijos del nodo concesionario
-foreach (XmlNode n1 in doc.DocumentElement.ChildNodes)
+try
 {
-    // Si tiene nodos, recorrer sus hijos
-    if (n1.HasChildNodes)
+    //Crear la instancia de xmldocument
+    XmlDocument doc = new XmlDocument();
+    doc.Load(rutaDocumentoXML);
+    // Recorrer los hijos del nodo concesionario
+    foreach (XmlNode n1 in doc.DocumentElement.ChildNodes)
     {
-        foreach (XmlNode n2 in n1.ChildNodes)
+        // Si tiene nodos, recorrer sus hijos
+        if (n1.HasChildNodes)
         {
-            // Obtener el atributo matricula del nodo coche
-            String matricula = n2.Attributes["matricula"].Value;
-            Console.WriteLine("Matricula: " + matricula);
-            // Nodos hijos del coche
-            foreach (XmlNode n3 in n2.ChildNodes)
+            foreach (XmlNode n2 in n1.ChildNodes)
             {
-                Console.WriteLine(n3.Name + " " + n3.InnerText);
+                // Obtener el atributo de los nodos hijos
+                String nodo_hijo = n2.Attributes["nodo_hijo"].Value;
+                Console.WriteLine("Nodo: " + nodo_hijo);
+                // Nodos hijos de los nodos hijos
+                foreach (XmlNode n3 in n2.ChildNodes)
+                {
+                    Console.WriteLine(n3.Name + " " + n3.InnerText);
+                }
             }
         }
-    }
 
+    }
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
 }

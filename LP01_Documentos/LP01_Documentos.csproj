@@ -15,4 +15,10 @@
     <None Remove="D001_Xml\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="D01_XML\testing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
