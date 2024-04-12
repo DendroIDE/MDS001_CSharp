@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{04BF5519-D46D-4EF8-9D50-36DECD39F4CF}|LP01_Documentos\\LP01_Documentos.csproj|d:\\repositorio\\metodos\\mds001_csharp\\lp01_documentos\\lp01_documentos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{04BF5519-D46D-4EF8-9D50-36DECD39F4CF}|LP01_Documentos\\LP01_Documentos.csproj|solutionrelative:lp01_documentos\\lp01_documentos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{04BF5519-D46D-4EF8-9D50-36DECD39F4CF}|LP01_Documentos\\LP01_Documentos.csproj|d:\\repositorio\\metodos\\mds001_csharp\\lp01_documentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04BF5519-D46D-4EF8-9D50-36DECD39F4CF}|LP01_Documentos\\LP01_Documentos.csproj|solutionrelative:lp01_documentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LP01_Documentos",
+              "DocumentMoniker": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\LP01_Documentos.csproj",
+              "RelativeDocumentMoniker": "LP01_Documentos\\LP01_Documentos.csproj",
+              "ToolTip": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\LP01_Documentos.csproj",
+              "RelativeToolTip": "LP01_Documentos\\LP01_Documentos.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-12T03:17:32.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\Program.cs",
               "RelativeDocumentMoniker": "LP01_Documentos\\Program.cs",

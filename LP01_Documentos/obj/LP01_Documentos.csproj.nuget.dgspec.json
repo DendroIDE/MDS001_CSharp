@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\LP01_Documentos.csproj",
         "projectName": "LP01_Documentos",
         "projectPath": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\LP01_Documentos.csproj",
-        "packagesPath": "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\DendroIDE\\.nuget\\packages\\",
         "outputPath": "D:\\Repositorio\\Metodos\\MDS001_CSharp\\LP01_Documentos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PROGRAMADOR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DendroIDE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,13 +48,13 @@
             "Microsoft.DotNet.ILCompiler": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.3, )",
+              "version": "[8.0.4, )",
               "autoReferenced": true
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.3, )",
+              "version": "[8.0.4, )",
               "autoReferenced": true
             }
           },
@@ -72,7 +72,7 @@
           "downloadDependencies": [
             {
               "name": "runtime.win-x64.Microsoft.DotNet.ILCompiler",
-              "version": "[8.0.3, 8.0.3]"
+              "version": "[8.0.4, 8.0.4]"
             }
           ],
           "frameworkReferences": {
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
