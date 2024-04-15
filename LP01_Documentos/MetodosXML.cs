@@ -8,14 +8,14 @@ using System.Xml;
 
 namespace LP01_Documentos
 {
-    internal class MetodosXML
+    public class MetodosXML
     {
-        void leerDocumentoXML(string nombreCarpetaDentroProyecto, string nombreArchivoXML)
+        public void leerDocumentoXML(string nombreCarpetaRecursos, string nombreArchivoXML)
         {
             //Ruta del documento
             string Ensamblador_Name = Assembly.GetExecutingAssembly().Location;
             string Directorio_Name = Path.GetDirectoryName(Ensamblador_Name);
-            string rutaDocumentoXML = Path.Combine(Directorio_Name, "D01_XML/testing.xml");
+            string rutaDocumentoXML = Path.Combine(Directorio_Name, nombreCarpetaRecursos, nombreArchivoXML);
             //Cargar el documento XML
             try
             {
