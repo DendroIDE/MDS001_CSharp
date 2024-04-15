@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nodo_principal>
+    <nodo1>
+        <coche nodo_hijo="1111AAA">
+            <marca>AUDI</marca>
+            <precio>30000</precio>
+        </coche>
+        <coche nodo_hijo="2222BBB">
+            <marca>SEAT</marca>
+            <precio>10000</precio>
+        </coche>
+        <coche nodo_hijo="3333CCC">
+            <marca>BMW</marca>
+            <precio>20000</precio>
+        </coche>
+        <coche nodo_hijo="4444DDD">
+            <marca>TOYOTA</marca>
+            <precio>10000</precio>
+        </coche>
+    </nodo1>
+</nodo_principal>
