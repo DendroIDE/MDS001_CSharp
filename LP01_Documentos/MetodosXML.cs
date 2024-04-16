@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace LP01_Documentos
 {
     public class MetodosXML
     {
-        public void leerDocumentoXML(string nombreCarpetaRecursos, string nombreArchivoXML)
+        public void LeerDocumentoXML(string nombreCarpetaRecursos, string nombreArchivoXML)
         {
             //Ruta del documento
             string Ensamblador_Name = Assembly.GetExecutingAssembly().Location;
@@ -48,5 +51,6 @@ namespace LP01_Documentos
                 Console.WriteLine(e.Message);
             }
         }
+
     }
 }
