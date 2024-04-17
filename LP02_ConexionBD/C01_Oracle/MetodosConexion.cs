@@ -16,9 +16,9 @@ namespace LP02_ConexionBD.C01_Oracle
             //Variable que permiten la lectura de los elementos del documento XML que contiene las cadenas de conexión.
             XElement root = XElement.Load(rutaDocumentoXML);
             //Variable que representa el elemento del documento xml con tipo de base de datos necesario a leer la cadena de conexion.
-            IEnumerable<XElement> address;
+            IEnumerable<XElement> exml_base_datos;
             //Variable que representa el elemento del documento xml con entorno empresarial de datos necesario a leer la cadena de conexion.
-            IEnumerable<XElement> entorno;
+            IEnumerable<XElement> exml_entorno_empresarial;
             //Cargar el documento XML
             try
             {
@@ -27,26 +27,27 @@ namespace LP02_ConexionBD.C01_Oracle
                 doc.Load(rutaDocumentoXML);
                 // Si tiene nodos y el elemento root se define como <cadena_conexion> </cadena_conexion>, recorrer sus hijos
                 if (doc.DocumentElement.HasChildNodes && doc.DocumentElement.Name.Equals("cadena_conexion"))
-                {                    
-                    address =
+                {
+                    //LinQ 
+                    exml_base_datos =
                         from elemento in root.Elements("conexion")
-                        where (string)elemento.Attribute("base_datos") == "oracle"
+                        where (string) elemento.Attribute("base_datos") == "oracle"
                         select elemento;
 
-                    if (address.Count() == 1)
+                    if (exml_base_datos.Count() == 1)
                     {
-                        entorno =
-                            from element in address.Elements("variable_cadena_conexion")
+                        exml_entorno_empresarial =
+                            from element in exml_base_datos.Elements("variable_cadena_conexion")
                             where (string) element.Attribute("entorno_empresarial") == "MEGAKONS"
                             select element;
 
-                        if (entorno.Count() == 1)
+                        if (exml_entorno_empresarial.Count() == 1)
                         {
-                            Console.WriteLine(entorno.First().Value);
+                            Console.WriteLine(exml_entorno_empresarial.First().Value);
                         }
                         else
                         {
-                            foreach (XElement el in entorno)
+                            foreach (XElement el in exml_entorno_empresarial)
                             {
                                 Console.WriteLine($"Debe existir una única variable de cadena de conexion por entorno empresarial: {el.Name} - {el.Attribute("entorno_empresarial").Value} - {el.Value}");
                             }
@@ -54,7 +55,7 @@ namespace LP02_ConexionBD.C01_Oracle
                     }
                     else
                     {
-                        foreach (XElement el in address)
+                        foreach (XElement el in exml_base_datos)
                         {
                             Console.WriteLine($"Debe existir una única variable de cadena de conexion por tipo de base de datos: {el.Name} - {el.Attribute("base_datos").Value} - {el.Value}");
                         }
