@@ -15,8 +15,9 @@ namespace LP02_ConexionBD.C01_Oracle
             string rutaDocumentoXML = Path.Combine(Directorio_Name, nombreCarpetaRecursos, nombreArchivoXML);
             //Variable que permiten la lectura de los elementos del documento XML que contiene las cadenas de conexión.
             XElement root = XElement.Load(rutaDocumentoXML);
-            //Variables que representan los elementos del xml.
+            //Variable que representa el elemento del documento xml con tipo de base de datos necesario a leer la cadena de conexion.
             IEnumerable<XElement> address;
+            //Variable que representa el elemento del documento xml con tipo de base de datos necesario a leer la cadena de conexion.
             IEnumerable<XElement> entorno;
             //Cargar el documento XML
             try
