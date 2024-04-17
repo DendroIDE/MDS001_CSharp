@@ -25,43 +25,49 @@ namespace LP02_ConexionBD.C01_Oracle
                 //Crear la instancia de xmldocument
                 XmlDocument doc = new XmlDocument();
                 doc.Load(rutaDocumentoXML);
-                // Si tiene nodos y el elemento root se define como <cadena_conexion> </cadena_conexion>, recorrer sus hijos
+                // Si tiene nodos hijos y el elemento root se define como <cadena_conexion> </cadena_conexion>, recorrer sus hijos
                 if (doc.DocumentElement.HasChildNodes && doc.DocumentElement.Name.Equals("cadena_conexion"))
                 {
-                    //LinQ 
+                    //LinQ que permite la búsqueda del tipo de base de datos a utilizar definido en el documento XML
                     exml_base_datos =
                         from elemento in root.Elements("conexion")
                         where (string) elemento.Attribute("base_datos") == "oracle"
                         select elemento;
-
+                    // Si se ha definido solo un tipo de base de datos como nodo padre principal entonces condiciona.
                     if (exml_base_datos.Count() == 1)
                     {
+                        //LinQ que permite la búsqueda del entorno empresarial a utilizar definido en el documento XML.
                         exml_entorno_empresarial =
                             from element in exml_base_datos.Elements("variable_cadena_conexion")
                             where (string) element.Attribute("entorno_empresarial") == "MEGAKONS"
                             select element;
-
+                        // Si se a defindo solo un entorno empresarial como nodo secundario entonces condiciona
                         if (exml_entorno_empresarial.Count() == 1)
                         {
                             Console.WriteLine(exml_entorno_empresarial.First().Value);
                         }
+                        // Caso contrario al tener definido más de uno o menos de uno entorno empresarial en un tipo de base de daros entonces condiciona el mensaje de error
                         else
                         {
-                            foreach (XElement el in exml_entorno_empresarial)
+                            //Ciclo que recorre el elemento filtrado por LinQ en el nodo del entorno empresarial
+                            foreach (XElement elemento_xml in exml_entorno_empresarial)
                             {
-                                Console.WriteLine($"Debe existir una única variable de cadena de conexion por entorno empresarial: {el.Name} - {el.Attribute("entorno_empresarial").Value} - {el.Value}");
+                                Console.WriteLine($"Debe existir una única variable de cadena de conexion por entorno empresarial: {elemento_xml.Name} - {elemento_xml.Attribute("entorno_empresarial").Value} - {elemento_xml.Value}");
                             }
                         }
                     }
+                    //Caso contrario al tener definido más de uno o ménos de uno tipo de base de datos como nodo padre principal entones condiciona el mensaje de error
                     else
                     {
-                        foreach (XElement el in exml_base_datos)
+                        //Ciclo que recorre el elemento filtrado por LinQ en el nodo del tipo de base de datos.
+                        foreach (XElement elemento_xml in exml_base_datos)
                         {
-                            Console.WriteLine($"Debe existir una única variable de cadena de conexion por tipo de base de datos: {el.Name} - {el.Attribute("base_datos").Value} - {el.Value}");
+                            Console.WriteLine($"Debe existir una única variable de cadena de conexion por tipo de base de datos: {elemento_xml.Name} - {elemento_xml.Attribute("base_datos").Value} - {elemento_xml.Value}");
                         }
                     }
 
                 }
+                //Caso contrario al no tener nodos hijos y el elemento root no se define como <cadena_conexion> </cadena_conexion> entonces condiciona el mensaje de error
                 else
                 {
 
@@ -69,10 +75,10 @@ namespace LP02_ConexionBD.C01_Oracle
                     Console.WriteLine("Revisar archivo de conexión XML elemento <cadena_conexion>.");
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
                 //Imprimir cualquiera error surgiente al ejecutar la lectura del archivo de cadena de conexion
-                Console.WriteLine(e.Message);
+                Console.WriteLine(exception.Message);
             }
             return "";
         }
