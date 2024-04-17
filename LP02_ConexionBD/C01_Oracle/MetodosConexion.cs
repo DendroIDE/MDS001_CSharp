@@ -15,8 +15,9 @@ namespace LP02_ConexionBD.C01_Oracle
             string rutaDocumentoXML = Path.Combine(Directorio_Name, nombreCarpetaRecursos, nombreArchivoXML);
             //Variable que permiten la lectura de los elementos del documento XML que contiene las cadenas de conexión.
             XElement root = XElement.Load(rutaDocumentoXML);
-            //Variables que representan los elementos del xml.
+            //Variable que representa el elemento del documento xml con tipo de base de datos necesario a leer la cadena de conexion.
             IEnumerable<XElement> address;
+            //Variable que representa el elemento del documento xml con entorno empresarial de datos necesario a leer la cadena de conexion.
             IEnumerable<XElement> entorno;
             //Cargar el documento XML
             try
@@ -47,7 +48,7 @@ namespace LP02_ConexionBD.C01_Oracle
                         {
                             foreach (XElement el in entorno)
                             {
-                                Console.WriteLine($"Solo debe existir una variable de cadena de conexion por entorno empresarial: {el.Name} - {el.Attribute("entorno_empresarial").Value} - {el.Value}");
+                                Console.WriteLine($"Debe existir una única variable de cadena de conexion por entorno empresarial: {el.Name} - {el.Attribute("entorno_empresarial").Value} - {el.Value}");
                             }
                         }
                     }
@@ -55,7 +56,7 @@ namespace LP02_ConexionBD.C01_Oracle
                     {
                         foreach (XElement el in address)
                         {
-                            Console.WriteLine($"Solo debe existir una variable de cadena de conexion por tipo de base de datos: {el.Name} - {el.Attribute("base_datos").Value} - {el.Value}");
+                            Console.WriteLine($"Debe existir una única variable de cadena de conexion por tipo de base de datos: {el.Name} - {el.Attribute("base_datos").Value} - {el.Value}");
                         }
                     }
 
