@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace LP02_ConexionBD.C01_Oracle
 {
@@ -16,6 +13,8 @@ namespace LP02_ConexionBD.C01_Oracle
             string Ensamblador_Name = Assembly.GetExecutingAssembly().Location;
             string Directorio_Name = Path.GetDirectoryName(Ensamblador_Name);
             string rutaDocumentoXML = Path.Combine(Directorio_Name, nombreCarpetaRecursos, nombreArchivoXML);
+            //Variable de conteo del número de nodos repetidos
+            int conteoNodosConexionesRepetidas = 0;
             //Cargar el documento XML
             try
             {
@@ -23,38 +22,45 @@ namespace LP02_ConexionBD.C01_Oracle
                 XmlDocument doc = new XmlDocument();
                 doc.Load(rutaDocumentoXML);
                 // Si tiene nodos, recorrer sus hijos
-                if (doc.DocumentElement.HasChildNodes)
+                if (doc.DocumentElement.HasChildNodes && doc.DocumentElement.Name.Equals("cadena_conexion"))
                 {
-                    // Recorrer los hijos del nodo principal
-                    foreach (XmlNode n1 in doc.DocumentElement.ChildNodes)
+                    XElement root = XElement.Load(rutaDocumentoXML);
+                    IEnumerable<XElement> address =
+                        from elemento in root.Elements("conexion")
+                        where (string)elemento.Attribute("base_datos") == "oracle"
+                        select elemento;
+
+                    if (address.Count() == 1)
                     {
-                        if (n1.Attributes["base_datos"].Value.Equals(tipoBaseDatos))
+                        IEnumerable<XElement> entorno =
+                            from element in address.Elements("variable_cadena_conexion")
+                            where (string) element.Attribute("entorno_empresarial") == "MEGAKONS"
+                            select element;
+
+                        if (entorno.Count() == 1)
                         {
-                            // Obtener el atributo de los nodos hijos
-                            foreach (XmlNode n2 in n1.ChildNodes)
-                            {
-                                if (n2.Attributes["entorno_empresarial"].Value.Equals(entornoEmpresarial))
-                                {
-                                    Console.WriteLine(n2.Name + " " + n2.InnerText.Replace(":CONNECTION_NAME", "MEGAKONS").Replace(":HOST_IP", "192.168.1.12").Replace(":PORT_IP", "1522").Replace(":NAME_BD", "MGK").Replace(":USER_BD", "PRD").Replace(":PASSWORD_BD", "PRD"));
-                                }
-                            }
+                            Console.WriteLine(entorno.First().Value);
                         }
                         else
                         {
-                            // Obtener el atributo de los nodos hijos
-                            foreach (XmlNode n2 in n1.ChildNodes)
+                            foreach (XElement el in entorno)
                             {
-                                if (n2.Attributes["entorno_empresarial"].Value.Equals(entornoEmpresarial))
-                                {
-                                    Console.WriteLine($"Solo debe existir una variable de cadena de conexion por entorno empresarial y por tipo de base de datos: {n2.Name} - {n2.Attributes["entorno_empresarial"].Value} - {n2.InnerText}");
-                                }
+                                Console.WriteLine($"Solo debe existir una variable de cadena de conexion por entorno empresarial: {el.Name} - {el.Attribute("entorno_empresarial").Value} - {el.Value}");
                             }
                         }
                     }
+                    else
+                    {
+                        foreach (XElement el in address)
+                        {
+                            Console.WriteLine($"Solo debe existir una variable de cadena de conexion por tipo de base de datos: {el.Name} - {el.Attribute("base_datos").Value} - {el.Value}");
+                        }
+                    }
+
                 }
                 else
                 {
-                    Console.WriteLine("Revisar archivo de conexión XML");
+                    Console.WriteLine("Revisar archivo de conexión XML elemento <cadena_conexion>.");
                 }
             }
             catch (Exception e)
