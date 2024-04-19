@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cadena_conexion>
 	<conexion base_datos="oracle">
-		<variable_cadena_conexion entorno_empresarial="DENDROIDE">Data Source=(DESCRIPTION=:CONNECTION_NAME(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:HOST_IP)(PORT=:PORT_IP)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:NAME_BD)));User Id=:USER_BD;Password=:PASSWORD_BD;</variable_cadena_conexion>
-		<variable_cadena_conexion entorno_empresarial="MEGAKONS">Data Source=(DESCRIPTION=:CONNECTION_NAME(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:HOST_IP)(PORT=:PORT_IP)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:NAME_BD)));User Id=:USER_BD;Password=:PASSWORD_BD;</variable_cadena_conexion>
-		<variable_cadena_conexion entorno_empresarial="CODE">Data Source=(DESCRIPTION=:CONNECTION_NAME(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:HOST_IP)(PORT=:PORT_IP)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:NAME_BD)));User Id=:USER_BD;Password=:PASSWORD_BD;</variable_cadena_conexion>
+		<variable_cadena_conexion entorno_empresarial="DENDROIDE">Data Source=(DESCRIPTION=:Connection_Name(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:Host_Ip)(PORT=:Port_Ip)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:DB_Name)));User Id=:DB_User;Password=:DB_Password;</variable_cadena_conexion>
+		<variable_cadena_conexion entorno_empresarial="MEGAKONS">Data Source=(DESCRIPTION=:Connection_Name(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:Host_Ip)(PORT=:Port_Ip)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:DB_Name)));User Id=:DB_User;Password=:DB_Password;</variable_cadena_conexion>
+		<variable_cadena_conexion entorno_empresarial="CODE">Data Source=(DESCRIPTION=:Connection_Name(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=:Host_Ip)(PORT=:Port_Ip)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=:DB_Name)));User Id=:DB_User;Password=:DB_Password;</variable_cadena_conexion>
 	</conexion>
     <conexion base_datos="sql server">
-        <variable_cadena_conexion entorno_empresarial="MEGAKONS">Data Source=:HOST_IP::PORT_IP;Initial Catalog=master;User ID=:USER_BD;Password=:PASSWORD_BD;MultipleActiveResultSets=True;Connect Timeout=100;Encrypt=False;Application Name=:NAME_BD;Current Language=spanish</variable_cadena_conexion>
+        <variable_cadena_conexion entorno_empresarial="MEGAKONS">Data Source=:Host_Ip::Port_Ip;Initial Catalog=master;User ID=:DB_User;Password=:DB_Password;MultipleActiveResultSets=True;Connect Timeout=100;Encrypt=False;Application Name=:DB_Name;Current Language=spanish</variable_cadena_conexion>
     </conexion>
 </cadena_conexion>
