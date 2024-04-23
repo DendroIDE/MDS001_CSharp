@@ -1,6 +1,7 @@
 ﻿
 using LP05_PatronesDiseño.PD01_Singleton;
 using LP05_PatronesDiseño.PD02_Singleton_Seguridad_Hilos;
+using LP05_PatronesDiseño.PD03_Builder;
 
 // Singleton ingenuo
 Console.WriteLine("Singleton ingenuo");
@@ -48,9 +49,30 @@ Thread process2 = new Thread(() =>
 
 process1.Start();
 process2.Start();
-
 process1.Join();
 process2.Join();
+//------------------------------------------------------------------------------------------------------------------------------
+Console.WriteLine("\n" + "--------------------------------------------------------------------------------------------" + "\n");
+//------------------------------------------------------------------------------------------------------------------------------
+//Builder
+Console.WriteLine("Builder");
+// El código del cliente crea un objeto constructor, se lo pasa al director y luego inicia el proceso de construcción. El resultado final se recupera del objeto constructor.
+var director = new Director();
+var builder = new ConcreteBuilder();
+director.Builder = builder;
+
+Console.WriteLine("Producto básico estándar:");
+director.BuildMinimalViableProduct();
+Console.WriteLine(builder.GetProduct().ListParts());
+
+Console.WriteLine("Producto estándar con todas las funciones:");
+director.BuildFullFeaturedProduct();
+Console.WriteLine(builder.GetProduct().ListParts());
+// Recuerda, el patrón Builder puede ser usado sin una clase Director.
+Console.WriteLine("Producto personalizado:");
+builder.BuildPartA();
+builder.BuildPartC();
+Console.Write(builder.GetProduct().ListParts());
 //------------------------------------------------------------------------------------------------------------------------------
 Console.WriteLine("\n" + "--------------------------------------------------------------------------------------------" + "\n");
 //------------------------------------------------------------------------------------------------------------------------------
