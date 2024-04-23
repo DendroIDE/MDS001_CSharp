@@ -11,10 +11,10 @@ namespace LP05_PatronesDiseño.PD03_Builder
     // varias variaciones de Constructores, implementadas de forma diferente.
     internal class ConcreteBuilder : IBuilder
     {
-        private Product _product = new Product();
 
         // Una nueva instancia del constructor debe contener un objeto producto en blanco, que
         // se utiliza en el montaje posterior.
+        private Product _product = new Product();
         public ConcreteBuilder()
         {
             this.Reset();

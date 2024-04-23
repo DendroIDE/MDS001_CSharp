@@ -28,9 +28,9 @@ namespace LP05_PatronesDiseño.PD03_Builder
                 str += this._parts[i] + ", ";
             }
 
-            str = str.Remove(str.Length - 2); // eliminar la última ",c"
+            str = str.Remove(str.Length - 2); // eliminar la última ", coma"
 
-            return "Product parts: " + str + "\n";
+            return "Partes del producto: " + str + "\n";
         }
     }
 }
