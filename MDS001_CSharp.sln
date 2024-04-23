@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP01_Documentos", "LP01_Documentos\LP01_Documentos.csproj", "{04BF5519-D46D-4EF8-9D50-36DECD39F4CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP02_ConexionBD", "LP02_ConexionBD\LP02_ConexionBD.csproj", "{D4DC3146-B3C0-49AD-9268-872D721DFCB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP02_ConexionBD", "LP02_ConexionBD\LP02_ConexionBD.csproj", "{D4DC3146-B3C0-49AD-9268-872D721DFCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP03_Interfaces", "LP03_Interfaces\LP03_Interfaces.csproj", "{62C2EA4D-3C3C-425E-A4EB-212026EC43C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D4DC3146-B3C0-49AD-9268-872D721DFCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4DC3146-B3C0-49AD-9268-872D721DFCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4DC3146-B3C0-49AD-9268-872D721DFCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C2EA4D-3C3C-425E-A4EB-212026EC43C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C2EA4D-3C3C-425E-A4EB-212026EC43C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C2EA4D-3C3C-425E-A4EB-212026EC43C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C2EA4D-3C3C-425E-A4EB-212026EC43C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
