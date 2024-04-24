@@ -3,6 +3,7 @@ using LP05_PatronesDiseño.PD01_Singleton;
 using LP05_PatronesDiseño.PD02_Singleton_Seguridad_Hilos;
 using LP05_PatronesDiseño.PD03_Builder;
 using LP05_PatronesDiseño.PD04_Strategy;
+using LP05_PatronesDiseño.PD05_Observer;
 
 // Singleton ingenuo
 Console.WriteLine("Singleton ingenuo");
@@ -93,3 +94,22 @@ Console.WriteLine();
 Console.WriteLine("Client: La estrategia se establece en ordenación inversa.");
 context.SetStrategy(new ConcreteStrategyB());
 context.DoSomeBusinessLogic();
+//------------------------------------------------------------------------------------------------------------------------------
+Console.WriteLine("\n" + "--------------------------------------------------------------------------------------------" + "\n");
+//------------------------------------------------------------------------------------------------------------------------------
+//Observer
+Console.WriteLine("Observer");
+// El código del cliente
+var subject = new Subject();
+var observerA = new ConcreteObserverA();
+subject.Attach(observerA);
+
+var observerB = new ConcreteObserverB();
+subject.Attach(observerB);
+
+subject.SomeBusinessLogic();
+subject.SomeBusinessLogic();
+
+subject.Detach(observerB);
+
+subject.SomeBusinessLogic();
