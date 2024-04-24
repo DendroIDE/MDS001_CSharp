@@ -2,6 +2,7 @@
 using LP05_PatronesDiseño.PD01_Singleton;
 using LP05_PatronesDiseño.PD02_Singleton_Seguridad_Hilos;
 using LP05_PatronesDiseño.PD03_Builder;
+using LP05_PatronesDiseño.PD04_Strategy;
 
 // Singleton ingenuo
 Console.WriteLine("Singleton ingenuo");
@@ -56,7 +57,8 @@ Console.WriteLine("\n" + "------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 //Builder
 Console.WriteLine("Builder");
-// El código del cliente crea un objeto constructor, se lo pasa al director y luego inicia el proceso de construcción. El resultado final se recupera del objeto constructor.
+// El código del cliente crea un objeto constructor, se lo pasa al director y luego inicia el proceso de construcción.
+// El resultado final se recupera del objeto constructor.
 var director = new Director();
 var builder = new ConcreteBuilder();
 director.Builder = builder;
@@ -76,3 +78,18 @@ Console.Write(builder.GetProduct().ListParts());
 //------------------------------------------------------------------------------------------------------------------------------
 Console.WriteLine("\n" + "--------------------------------------------------------------------------------------------" + "\n");
 //------------------------------------------------------------------------------------------------------------------------------
+//Strategy
+Console.WriteLine("Strategy");
+// El código del cliente elige una estrategia concreta y la pasa al contexto.
+// El cliente debe conocer las diferencias entre estrategias para hacer la elección correcta.
+var context = new Context();
+
+Console.WriteLine("Client: La estrategia se ajusta a la clasificación normal.");
+context.SetStrategy(new ConcreteStrategyA());
+context.DoSomeBusinessLogic();
+
+Console.WriteLine();
+
+Console.WriteLine("Client: La estrategia se establece en ordenación inversa.");
+context.SetStrategy(new ConcreteStrategyB());
+context.DoSomeBusinessLogic();
