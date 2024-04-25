@@ -7,11 +7,9 @@ Console.WriteLine("\n" + "------------------------------------------------------
 Console.WriteLine("Dependency Injection - Simple Method");
 Service1 service1 = new Service1();
 Client client1 = new Client();
-client1.Service = service1;
-client1.ServeMethod();
+client1.ServeMethod(service1);
 
 
 Service2 service2 = new Service2();
 Client client2 = new Client();
-client2.Service = service2;
-client2.ServeMethod();
+client2.ServeMethod(service2);

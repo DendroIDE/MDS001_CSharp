@@ -9,21 +9,13 @@ namespace LP06_DependencyInjection.DI01_MetodologiaSimple
     internal class Client
     {
         private IService _service;
-        public IService Service
-        {
-            set
-            {
-                this._service = value;
-            }
+
+        public Client() {
         }
 
-        public Client(){
-
-        }
-
-        public void ServeMethod()
+        public void ServeMethod(IService service)
         {
-            this._service.Serve();
+            service.Serve();
         }
     }
 }
