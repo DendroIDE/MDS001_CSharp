@@ -9,7 +9,7 @@ namespace LP07_Logs.Controllers
 
         private static readonly string[] Summaries = new[]
         {
-            "Ambato", "Quito"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
