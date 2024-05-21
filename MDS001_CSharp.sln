@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP02_ConexionBD", "LP02_Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP05_PatronesDiseño", "LP05_PatronesDiseño\LP05_PatronesDiseño.csproj", "{12A8B425-0D53-427B-8FA8-0DB61BCAD192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP06_DependencyInjection", "LP06_DependencyInjection\LP06_DependencyInjection.csproj", "{FB1C0168-9234-49FF-AD38-52694FCA67E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP06_DependencyInjection", "LP06_DependencyInjection\LP06_DependencyInjection.csproj", "{FB1C0168-9234-49FF-AD38-52694FCA67E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP07_Logs", "LP07_Logs\LP07_Logs.csproj", "{9A5CB093-A534-4C83-BA6D-728572552729}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FB1C0168-9234-49FF-AD38-52694FCA67E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB1C0168-9234-49FF-AD38-52694FCA67E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB1C0168-9234-49FF-AD38-52694FCA67E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5CB093-A534-4C83-BA6D-728572552729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5CB093-A534-4C83-BA6D-728572552729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5CB093-A534-4C83-BA6D-728572552729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5CB093-A534-4C83-BA6D-728572552729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

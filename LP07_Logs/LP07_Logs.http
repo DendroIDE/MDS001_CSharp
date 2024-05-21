@@ -1,0 +1,6 @@
+@LP07_Logs_HostAddress = http://localhost:5135
+
+GET {{LP07_Logs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

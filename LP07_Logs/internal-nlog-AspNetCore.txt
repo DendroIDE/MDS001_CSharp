@@ -1,0 +1,16 @@
+2024-05-21 01:43:01.1262 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2024-05-21 01:43:01.1314 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2024-05-21 01:43:01.1314 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-05-21 01:43:01.1314 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-05-21 01:43:01.1496 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=57, FilePath=D:\Repositorio\Metodos\MDS001_CSharp\LP07_Logs\bin\Debug\net8.0\NLog.config
+2024-05-21 01:43:01.1496 Info Configuration initialized.
+2024-05-21 01:43:01.5023 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=57, FilePath=D:\Repositorio\Metodos\MDS001_CSharp\LP07_Logs\bin\Debug\net8.0\NLog.config
+2024-05-21 01:43:01.5023 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: FileTarget(Name=ownFile-web). LoggingRule with NamePattern='*' and Level=Warn has been skipped.
+2024-05-21 01:44:28.9822 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2024-05-21 01:44:28.9874 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2024-05-21 01:44:28.9874 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-05-21 01:44:28.9874 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-05-21 01:44:29.0087 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=57, FilePath=D:\Repositorio\Metodos\MDS001_CSharp\LP07_Logs\bin\Debug\net8.0\NLog.config
+2024-05-21 01:44:29.0087 Info Configuration initialized.
+2024-05-21 01:44:29.1808 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=57, FilePath=D:\Repositorio\Metodos\MDS001_CSharp\LP07_Logs\bin\Debug\net8.0\NLog.config
+2024-05-21 01:44:29.1808 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: FileTarget(Name=ownFile-web). LoggingRule with NamePattern='*' and Level=Warn has been skipped.
