@@ -1,5 +1,3 @@
-var builder = WebApplication.CreateBuilder(args);
-
 using NLog;
 using NLog.Web;
 using System;
